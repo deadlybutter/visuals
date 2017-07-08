@@ -1,0 +1,19 @@
+{
+  "name": "visuals",
+  "version": "1.0.0",
+  "description": "React component library for building visualizations Edit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joekent-cms-project/visuals.git"
+  },
+  "author": "Joe Kent",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joekent-cms-project/visuals/issues"
+  },
+  "homepage": "https://github.com/joekent-cms-project/visuals#readme"
+}
