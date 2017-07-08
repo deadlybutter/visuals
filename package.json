@@ -4,7 +4,8 @@
   "description": "React component library for building visualizations Edit",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --colors --reporter nyan --require babel-polyfill --compilers js:babel-register",
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,23 @@
   "bugs": {
     "url": "https://github.com/joekent-cms-project/visuals/issues"
   },
-  "homepage": "https://github.com/joekent-cms-project/visuals#readme"
+  "homepage": "https://github.com/joekent-cms-project/visuals#readme",
+  "dependencies": {
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1"
+  },
+  "devDependencies": {
+    "@storybook/react": "^3.1.8",
+    "babel-plugin-syntax-export-extensions": "^6.13.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "enzyme": "^2.9.1",
+    "expect.js": "^0.3.1",
+    "mocha": "^3.4.2",
+    "react-addons-test-utils": "^15.6.0",
+    "react-dom": "^15.6.1",
+    "react-test-renderer": "^15.6.1"
+  }
 }
