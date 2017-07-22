@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Grid = (props) => {
+const Grid = ({ pos, children }) => {
   return null;
 };
 
