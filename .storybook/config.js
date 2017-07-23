@@ -1,7 +1,8 @@
 import { configure } from '@storybook/react';
+import './styling.css';
 
 function loadStories() {
-  require('../lib/stories.js');
+  require('./graph.js');
 }
 
 configure(loadStories, module);
