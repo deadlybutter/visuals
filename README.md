@@ -1,5 +1,5 @@
 # visuals
-React component library for building visualizations
+React component library for quickly building brilliant visualizations.
 
 ## install
 
@@ -8,50 +8,32 @@ $ npm install visuals
 ```
 
 ```js
-const { Grid } = require('visuals');
+import Visuals from 'visuals';
 
-<Grid />
+const Demo = (
+  <Visuals.Graph>
+    <Visuals.Rect x={50} y={50} width={'10%'} height={'10%'} fill="red" stroke="black">
+      <Visuals.Rect x={'50%'} y={'50%'} width={'75%'} height={'75%'} fill="blue" stroke="black" />
+      <Visuals.Rect x={'50%'} y={'50%'} width={'50%'} height={'50%'} fill="yellow" >
+        <Visuals.Rect x={'50%'} y={'50%'} width={'50%'} height={'50%'} fill="green" />
+      </Visuals.Rect>
+    </Visuals.Rect>
+    <Visuals.Text x={420} y={460} text="test test test" rotate={{ angle: "45" }} textAnchor="middle" fontFamily="Verdana" fontSize="35" />
+  </Visuals.Graph>
+);
+
+ReactDOM.render(Demo, document.getElementById('demo'));
 ```
+
+![Demo in motion](demo.gif)
 
 ## contributing
 
 ```sh
 $ git clone https://github.com/joekent-cms-project/visuals.git
 $ npm install
-...
+
 $ npm run storybook
-$ npm run test
-$ npm run lint
+$ npm run test # Coming soon
+$ npm run lint # Coming soon
 ```
-
---------------------
-
-
-GOALS
-
-1. Kill all files
-2. Make <Graph /> the Ruler + SVG component. Measure the actual SVG element (duh) and pass those values down.
-3. Shape refactoring.
-  - Make this an abstract class extending the React element
-    - Handles under the hood technicals, common functions, animations, styling and abstract stubs.
-    - Will also replace the need for the <Grid /> component. It will inherit all of this functionality and thus accept children.
-    - Shape will monkeypatch the React component methods such as componentOnMount, render, etc. Ideally we prevent the children from calling the original.
-  - Different types of shapes will extend Shape and implement various functions that are relevant / need to be overrided.
-
-
------------
-
-
-1. Add Scale, Dimension
- - Scale, virtual width/height that translates values relative to it
- - Dimension, the width/height of the element
-
-2. Need a way of moving these props down to children & others (eg: map x/y to origin)
-
-3. Add attributes
-
-=====
-
-Add Scale, Grid
- Grid  = graph - origin
- Scale = n || %
